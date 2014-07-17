@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <string name="app_name">CameraStudy_test</string>
+    <string name="shot">拍照</string>
+    <string name="focus_shot">對焦</string>
+    <string name="camera_parameter">相機參數</string>
+	<string name="action_settings">Settings</string>
+	
+</resources>
