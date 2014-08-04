@@ -36,7 +36,8 @@ import android.widget.Toast;
 public class Init extends Activity implements OnClickListener,SeekBar.OnSeekBarChangeListener {
 	private CameraPreviewSurface m_cameraPreviewSurface;
 	//將filename設為全域變數
-	String filename = String.format("%1$d.png",System.currentTimeMillis());
+	String filename = "temp.png";
+	//String filename = String.format("%1$d.png",System.currentTimeMillis());
 	
 	//程式第一次created時呼叫
 	@Override
@@ -62,6 +63,8 @@ public class Init extends Activity implements OnClickListener,SeekBar.OnSeekBarC
 		SeekBar seekBar=(SeekBar)findViewById(R.id.zoomRate);
 		seekBar.setOnClickListener(this);
 	}
+	
+	
 	/**
 	 * 全螢幕執行
 	 */
@@ -85,8 +88,8 @@ public class Init extends Activity implements OnClickListener,SeekBar.OnSeekBarC
 		    intent.setClass(Init.this, PicturePreview.class);
 		    intent.putExtras(bundle);
 		    // Turn to Edit info activity
-    		startActivity(intent);
-    		//Init.this.finish();
+			startActivity(intent);
+			//Init.this.finish();
 			}
 		if (clickedButton.getId()==R.id.infoButton){
 			//顯示出這相機的參數設定
@@ -188,7 +191,8 @@ public class Init extends Activity implements OnClickListener,SeekBar.OnSeekBarC
 				//放入這個程式SD卡外部空間
 				//File file = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),filename);
 				File file = new File(Environment.getExternalStorageDirectory()
-                        + "/cloze/"+filename+".png");
+                        + "/cloze/"+filename);
+				Log.e("path", file.getPath());
 				outStream = new FileOutputStream(file);
 				outStream.write(data);
 				outStream.close();

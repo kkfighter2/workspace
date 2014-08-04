@@ -31,12 +31,18 @@ import android.view.View.OnClickListener;
 			//接收bundle
 			Bundle bundle = getIntent().getExtras();
 			String filename =  bundle.getString("filename");
-			String pathName = Environment.getExternalStorageDirectory() +"/cloze/"+filename+".png";
+			
+			//String filename = "1407123533348.png";
+			//String filename = "1406011418687.png";
+			
+			Log.e("filename", filename);
+			
+			String pathName = Environment.getExternalStorageDirectory() +"/cloze/"+filename;
+			Log.e("pathname", pathName);
 			
 			//照片轉bitmap
 			Bitmap photoBitmap = BitmapFactory.decodeFile(pathName);
 			Bitmap result = CombineImages.combineImages(maskBitmap,photoBitmap);
-			Bitmap bmp = BitmapFactory.decodeFile(pathName);
 			preview.setImageBitmap(result);
 			/**
 			String path = Environment.getExternalStorageDirectory()+"/cloze/"+filename+".png";

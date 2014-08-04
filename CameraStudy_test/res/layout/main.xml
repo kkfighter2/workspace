@@ -7,13 +7,16 @@
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="wrap_content"
-        android:layout_height="540dp" >
+        android:layout_height="480dp"
+        android:layout_weight="2"
+         
+     >
+     
 
 		<SurfaceView
             android:id="@+id/preview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
         </SurfaceView>
 		<ImageView
 	            android:background="@null"
@@ -27,7 +30,8 @@
 	<LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_weight="1" >
         
         <Button
             android:id="@+id/shutterButton"
